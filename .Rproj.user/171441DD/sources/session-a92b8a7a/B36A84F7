@@ -3,7 +3,7 @@
     "path": "~/BI Study/R_Shiny/Gezondheid_Data_Dashboard/global.R",
     "project_path": "global.R",
     "type": "r_source",
-    "hash": "3363244128",
+    "hash": "1246647295",
     "contents": "",
     "dirty": false,
     "created": 1779534749549.0,
@@ -12,15 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "1,0",
-        "scrollLine": "0"
+        "cursorPosition": "8,0",
+        "scrollLine": "0",
+        "marks": "<:19,0\n>:22,0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1779534755,
+    "lastKnownWriteTime": 1779537983,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1779534755436,
+    "last_content_update": 1779537983719,
     "read_only": false,
     "read_only_alternatives": []
 }

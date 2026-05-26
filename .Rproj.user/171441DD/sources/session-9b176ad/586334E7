@@ -1,0 +1,27 @@
+{
+    "id": "586334E7",
+    "path": "~/BI Study/R_Shiny/Gezondheid_Data_Dashboard/ui.R",
+    "project_path": "ui.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1779662939885.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "15,7",
+        "scrollLine": "0",
+        "marks": "<:15,0\n>:15,0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1779814489,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1779814489058,
+    "read_only": false,
+    "read_only_alternatives": []
+}

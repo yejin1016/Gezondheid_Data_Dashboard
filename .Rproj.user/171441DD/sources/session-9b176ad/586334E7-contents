@@ -1,10 +1,10 @@
 # shiny UI
 ui <- page_fluid(
   theme = bs_theme(version = 5, bootswatch = "cerulean"),
-  
   tags$head(tags$meta(charset="UTF-8")),
   tags$style(HTML("body { font-family: Arial, Helvetica, sans-serif; }")),
-  titlePanel("Dutch Public Health Monitor"),
+  navbarPage("Dutch Public Health Monitor", 
+             tabPanel("Plot Data",
   sidebarLayout(
     sidebarPanel(
        width = 2,
@@ -13,7 +13,13 @@ ui <- page_fluid(
      ),
      mainPanel(
        width = 10,
-       plotOutput("final_plot", width = 600, height = 500)
+       plotOutput("final_plot", width = 800, height = 500)
      )
    )
+                      ),
+             tabPanel("About",
+                      icon = icon("info-circle"),
+                      br(),
+                      includeMarkdown("README.md"))
+)
 )

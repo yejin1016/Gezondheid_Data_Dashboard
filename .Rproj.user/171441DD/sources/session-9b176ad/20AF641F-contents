@@ -83,11 +83,15 @@ unique(data_filter_and_extract_group$Category)
 ```
 
 ```{r}
-
-
 mvh_shiny_data <- mvh_shiny_data %>%
   filter(Category %in% c("Sex", "Age", "Origin", "Equivalised income"))
 
 unique(data$Characteristics_label)
+```
+
+
+```{r}
+rsconnect::setAccountInfo(name='yejinpark1016', token='ABB38754B7BD00BEA7FE5B9EF9172850', secret='FopWh9x52d5dnosVLs6NeHTcjNMq4vL63MT9JkSt')
+rsconnect::deployApp(".")
 ```
 

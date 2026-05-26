@@ -1,27 +1,27 @@
 {
-    "id": "B36A84F7",
-    "path": "~/BI Study/R_Shiny/Gezondheid_Data_Dashboard/global.R",
-    "project_path": "global.R",
-    "type": "r_source",
+    "id": "892B2A92",
+    "path": "~/BI Study/R_Shiny/Gezondheid_Data_Dashboard/README.md",
+    "project_path": "README.md",
+    "type": "markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1779534749549.0,
+    "created": 1779819757077.0,
     "source_on_save": false,
     "relative_order": 6,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "67,44",
+        "cursorPosition": "15,67",
         "scrollLine": "0",
-        "marks": "<:61,18\n>:61,18"
+        "marks": "<:14,0\n>:14,0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1779821163,
+    "lastKnownWriteTime": 1779821246,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1779821163794,
+    "last_content_update": 1779821246858,
     "read_only": false,
     "read_only_alternatives": []
 }

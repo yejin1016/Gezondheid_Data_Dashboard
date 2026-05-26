@@ -1,0 +1,10 @@
+name: gezondheid_data_dashboard
+title:
+username: yejinpark1016
+account: yejinpark1016
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17423246
+bundleId: 12043246
+url: https://yejinpark1016.shinyapps.io/gezondheid_data_dashboard/
+version: 1

@@ -1,4 +1,5 @@
 # global.R
+library(rsconnect)
 library(shiny)
 library(shinythemes)
 library(cbsodataR)
@@ -9,13 +10,10 @@ library(dplyr)
 library(tidyr)
 library(tidytext)
 library(stringr)
-library(stringr)
+library(markdown)
 
-# metadata <- cbs_get_meta("85454eng")
-# data <- cbs_get_data("85454eng") %>%
-#         cbs_add_label_columns()
-# write.table(data, "source.csv", sep = ";", row.names = FALSE)
-data <- read.csv("source.csv", sep = ";", row.names = NULL)
+data <- cbs_get_data("85454eng") %>%
+        cbs_add_label_columns()
 
 data_filter_and_extract_group <- data %>%
   separate_wider_delim(
@@ -59,10 +57,14 @@ mvh_shiny_data <- data_filter_and_extract_group %>%
   ) 
   
 
-plot_filtered_data <- function(data, topic){
-  ggplot(data, aes(x = Year, .data[[topic]], color = Subcategory)) +
-    geom_line(linewidth = 1) +
-    geom_point(size = 3) +
-    labs(x = "Year", y = "Proportion", color = "Subgroup") +
-    theme_minimal()
+plot_filtered_data <- function(data, topic, cat){
+  ggplot(data, aes(x = Year, .data[[topic]], group = Subcategory, color = Subcategory)) +
+    geom_line(aes(color = Subcategory), linewidth = 1) +
+    geom_point(aes(color = Subcategory), size = 3) +
+    labs(x = "Year", 
+         y = "Proportion", 
+         title = paste0("Yearly Trend of ", topic, " Based on ", cat),
+         color = "Subgroup") +
+    theme(plot.title = element_text(size = 20, face = "bold", hjust = 0)) +
+    theme_minimal(base_size = 14)
 }

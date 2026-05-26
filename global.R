@@ -4,17 +4,16 @@ library(shiny)
 library(shinythemes)
 library(cbsodataR)
 library(bslib)
-library(readr)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-library(tidytext)
-library(stringr)
 library(markdown)
 
+# load the raw data from CBS directly
 data <- cbs_get_data("85454eng") %>%
         cbs_add_label_columns()
 
+# trim raw data and simplify the structure
 data_filter_and_extract_group <- data %>%
   separate_wider_delim(
     cols = Characteristics_label,
@@ -24,25 +23,10 @@ data_filter_and_extract_group <- data %>%
   ) %>%
   mutate(Subcategory = ifelse(is.na(Subcategory), "Total", Subcategory))
 
-shiny_data <- data %>%
-  # Keep only the actual calculated percentage values
-  filter(Margins_label == "Value") %>%
-  # Filter for specific demographic rows only (Gender and main Age groups)
-  filter(grepl("sex|age", Characteristics_label, ignore.case = TRUE)) %>%
-  # Select only the years, the category name, and your target mental health metrics
-  select(
-    Year = Periods_label,
-    Demographic = Characteristics_label,
-    Anxiety_Depression_Pct = FeelingsOfAnxietyOrDepression4Wks_4,
-    PsychDistress_Pct = PsychologicalDistressPast4Weeks_5
-  ) %>%
-  # Remove any rows that don't have data
-  filter(!is.na(Anxiety_Depression_Pct)) %>%
-  mutate(Year = as.numeric(Year))
-
-
+# final trimming for the showcase purpose
 mvh_shiny_data <- data_filter_and_extract_group %>%
   filter(Margins_label == "Value") %>%
+  # only 4 demographics chosen
   filter(Category %in% c("Sex", "Age", "Origin", "Equivalised income")) %>%
   select(
     Year = Periods_label,
@@ -56,7 +40,7 @@ mvh_shiny_data <- data_filter_and_extract_group %>%
     "Diabetes Rate" = DiabetesTotal_28
   ) 
   
-
+# function to plot the data
 plot_filtered_data <- function(data, topic, cat){
   ggplot(data, aes(x = Year, .data[[topic]], group = Subcategory, color = Subcategory)) +
     geom_line(aes(color = Subcategory), linewidth = 1) +

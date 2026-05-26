@@ -1,7 +1,0 @@
-*.Rmd
-*.html
-/source_data/*
-.Rhistory
-.Rdata
-.gitignore
-.Rproj
